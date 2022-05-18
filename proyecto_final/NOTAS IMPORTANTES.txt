@@ -1,0 +1,10 @@
+Nombre Base de datos: trabajo_final
+nombre de la tabla: simulacion
+campos de la tabla: cedula PK,nombre,tiempo_simulacion
+
+
+
+nombre del usuario:trabajo_final
+clave del usuario: hola123
+
+tener en cuenta cuando se levante el back, el puerto en donde se levante para cambiarlo en el front
