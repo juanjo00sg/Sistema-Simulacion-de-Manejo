@@ -29,3 +29,6 @@ C:\Users\athen\Desktop\Universidad\6TO SEMESTRE\Programación front end\backEnd_
 C:\Users\athen\Desktop\Universidad\6TO SEMESTRE\Programación front end\backEnd_proyectoFinal\backEnd_proyectoFinal\obj\Debug\net5.0\backEnd_proyectoFinal.pdb
 C:\Users\athen\Desktop\Universidad\6TO SEMESTRE\Programación front end\backEnd_proyectoFinal\backEnd_proyectoFinal\obj\Debug\net5.0\backEnd_proyectoFinal.genruntimeconfig.cache
 C:\Users\athen\Desktop\Universidad\6TO SEMESTRE\Programación front end\backEnd_proyectoFinal\backEnd_proyectoFinal\obj\Debug\net5.0\ref\backEnd_proyectoFinal.dll
+C:\Users\jujo0\Documents\Universidad\UAM\2022-1\Programación ForntEnd\Juego Trabajo Final\backEnd_proyectoFinal\backEnd_proyectoFinal\obj\Debug\net5.0\backEnd_proyectoFinal.dll
+C:\Users\jujo0\Documents\Universidad\UAM\2022-1\Programación ForntEnd\Juego Trabajo Final\backEnd_proyectoFinal\backEnd_proyectoFinal\obj\Debug\net5.0\refint\backEnd_proyectoFinal.dll
+C:\Users\jujo0\Documents\Universidad\UAM\2022-1\Programación ForntEnd\Juego Trabajo Final\backEnd_proyectoFinal\backEnd_proyectoFinal\obj\Debug\net5.0\backEnd_proyectoFinal.pdb
