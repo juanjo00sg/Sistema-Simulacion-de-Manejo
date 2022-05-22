@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\athen\\Desktop\\Universidad\\6TO SEMESTRE\\Programación front end\\backEnd_proyectoFinal\\backEnd_proyectoFinal\\backEnd_proyectoFinal.csproj": {}
+    "C:\\Users\\jujo0\\Documents\\Universidad\\UAM\\2022-1\\Programación ForntEnd\\Juego Trabajo Final\\backEnd_proyectoFinal\\backEnd_proyectoFinal\\backEnd_proyectoFinal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\athen\\Desktop\\Universidad\\6TO SEMESTRE\\Programación front end\\backEnd_proyectoFinal\\backEnd_proyectoFinal\\backEnd_proyectoFinal.csproj": {
+    "C:\\Users\\jujo0\\Documents\\Universidad\\UAM\\2022-1\\Programación ForntEnd\\Juego Trabajo Final\\backEnd_proyectoFinal\\backEnd_proyectoFinal\\backEnd_proyectoFinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\athen\\Desktop\\Universidad\\6TO SEMESTRE\\Programación front end\\backEnd_proyectoFinal\\backEnd_proyectoFinal\\backEnd_proyectoFinal.csproj",
+        "projectUniqueName": "C:\\Users\\jujo0\\Documents\\Universidad\\UAM\\2022-1\\Programación ForntEnd\\Juego Trabajo Final\\backEnd_proyectoFinal\\backEnd_proyectoFinal\\backEnd_proyectoFinal.csproj",
         "projectName": "backEnd_proyectoFinal",
-        "projectPath": "C:\\Users\\athen\\Desktop\\Universidad\\6TO SEMESTRE\\Programación front end\\backEnd_proyectoFinal\\backEnd_proyectoFinal\\backEnd_proyectoFinal.csproj",
-        "packagesPath": "C:\\Users\\athen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\athen\\Desktop\\Universidad\\6TO SEMESTRE\\Programación front end\\backEnd_proyectoFinal\\backEnd_proyectoFinal\\obj\\",
+        "projectPath": "C:\\Users\\jujo0\\Documents\\Universidad\\UAM\\2022-1\\Programación ForntEnd\\Juego Trabajo Final\\backEnd_proyectoFinal\\backEnd_proyectoFinal\\backEnd_proyectoFinal.csproj",
+        "packagesPath": "C:\\Users\\jujo0\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jujo0\\Documents\\Universidad\\UAM\\2022-1\\Programación ForntEnd\\Juego Trabajo Final\\backEnd_proyectoFinal\\backEnd_proyectoFinal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\athen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jujo0\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
