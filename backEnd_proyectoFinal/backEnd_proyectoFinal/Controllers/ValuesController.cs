@@ -17,20 +17,67 @@ namespace backEnd_proyectoFinal.Controllers
         [HttpGet]
         public string Get()
         {
-            User u = new User("", "", 0);
+            User u = new User(0);
             string m = u.listar();
+            return m;
+        }
+
+        // GET api/<ValuesController>/5
+        [HttpGet("{id}")]
+        public string Get(string id)
+        {
+
+            Usuario u = new Usuario();
+            string m = u.listar(id);
             return m;
         }
 
         // POST api/<ValuesController>
         [HttpPost]
-        public string Post([FromBody] JsonElement value)
+        public bool Post([FromBody] JsonElement value)
         {
             string ced = value.GetProperty("ced").ToString();
-            string nombre = value.GetProperty("nom").ToString();
+            string nombre = value.GetProperty("nom").ToString();  
+            string email = value.GetProperty("email").ToString();
+            string password = value.GetProperty("pass").ToString();            
             int tiempo = value.GetProperty("tiempo").GetInt32();
-            User u = new User(ced, nombre, tiempo);
-            string m = u.ingresar();
+            int edad = value.GetProperty("edad").GetInt32();
+
+            if (ced == null && nombre == null && tiempo  == null)
+            {
+                User u = new User(email, password); //login()
+                string m = u.login();
+            } else if (email == null && password == null )
+            {
+                User u = new User(ced, nombre, tiempo); //ingresar()
+                string m = u.ingresarTiempo();
+            } else if (tiempo == null )
+            {
+                User u = new User(ced, nombre, password, edad, email); //registrar()
+                string m = u.registrar();
+            }
+            
+            return m;
+        }
+
+        // PUT api/<ValuesController>/5
+        [HttpPut("{id}")]
+        public string Put(string id, [FromBody] JsonElement value)
+        {
+            string ced = value.GetProperty("ced").ToString();
+            string nombre = value.GetProperty("nom").ToString();              
+            int edad = value.GetProperty("edad").GetInt32();
+            User u = new User(ced, nombre, edad);
+            string m = u.modificar();
+            return m;
+        }
+
+        // DELETE api/<ValuesController>/5
+        [HttpDelete("{id}")]
+        public string Delete(string id)
+        {
+            Usuario u = new Usuario(id);
+            string m = u.eliminar();
             return m;
         }
 
