@@ -16,7 +16,7 @@ namespace backEnd_proyectoFinal.Models
         int tiempo      { get; set; }             
             
         NpgsqlConnection bd; //Variable para la coneccion a la bd
-        public User(string ced,string nombre, string password, int edad string email)
+        public User(string ced,string nombre, string password, int edad, string email)
         {
             this.ced = ced;
             this.nombre = nombre;
@@ -50,7 +50,7 @@ namespace backEnd_proyectoFinal.Models
 
         public void conectar()
         {
-            bd = new NpgsqlConnection("server=localhost; User Id=trabajo_final; Password=hola123 ; Database=trabajo_final");
+            bd = new NpgsqlConnection("server=localhost; User Id=postgres; Password=hola1234 ; Database=trabajo_final");
             this.bd.Open();
         }        
 
@@ -89,7 +89,7 @@ namespace backEnd_proyectoFinal.Models
             try
             {
                 string sql = "update simulacion set nombre ='"  + this.nombre + "', tiempo_simulacion = '"  +
-                            this.tiempo + "' where cedula ='"  + this.cedula + "';";
+                            this.tiempo + "' where cedula ='"  + this.ced + "';";
                 new NpgsqlCommand(sql, this.bd).ExecuteNonQuery();
                 return "Tiempo ingresado...";
             }
@@ -129,13 +129,12 @@ namespace backEnd_proyectoFinal.Models
         }
 
         public string listar(string param)
-        {
-            string mensaje = "";
+        {            
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand();                                
-                sql = "select * from simulacion where cedula = '" + param + "'";
-                var reader = new NpgsqlCommand(sql, this.connect).ExecuteReader();
+                string sql = "select * from simulacion where cedula = '" + param + "'";
+                var reader = new NpgsqlCommand(sql, this.bd).ExecuteReader();
                 var estudiantes = new List<dynamic>();
                 while (reader.Read())
                 {
@@ -165,7 +164,7 @@ namespace backEnd_proyectoFinal.Models
             {
                 NpgsqlCommand cmd = new NpgsqlCommand();
                 string sql = "delete from simulacion where cedula='" + this.ced + "'";
-                new NpgsqlCommand(sql, this.connect).ExecuteNonQuery();
+                new NpgsqlCommand(sql, this.bd).ExecuteNonQuery();
                 return "Registro eliminado...";
             }
             catch (Exception E)
@@ -179,7 +178,7 @@ namespace backEnd_proyectoFinal.Models
             try
             {
                 string sql = "update  simulacion set nombre = '" + this.nombre + "', edad = '" + this.edad +
-                            "' where cedula = '" + this.cedula + "';";
+                            "' where cedula = '" + this.ced + "';";
                 new NpgsqlCommand(sql, this.bd).ExecuteNonQuery();
                 return "Datos Modificados...";
             }

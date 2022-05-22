@@ -89,8 +89,8 @@ function draw() {
   });
   car.move(keyValue);
   car.show();
-  console.log(document.getElementById('nombre').value)
-  console.log(document.getElementById('cedula').value)
+  /* console.log(document.getElementById('nombre').value) */
+  /* console.log(document.getElementById('cedula').value) */
 }
 
 
@@ -146,6 +146,9 @@ function ingresar(cedula,nombre,tiempo) {
       ced: cedula,
       nom: nombre,
       tiempo: tiempo,
+      email: null,
+      pass: null,
+      edad: -1,
     }),
   });
 

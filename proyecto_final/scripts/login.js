@@ -13,7 +13,10 @@ var request = new Request("https://localhost:44360/api/Values", {
     body: JSON.stringify({
       email: email,
       pass: password,
-     
+      ced: null,
+      nom: null,
+      tiempo: -1,
+      edad: -1,
     }),
   });
 
@@ -47,7 +50,8 @@ function registro(){
           pass: password,
           nom:nombre,
           ced: cedula,
-          edad: parseInt(edad)
+          edad: parseInt(edad), 
+          tiempo: null
         }),
       });
     

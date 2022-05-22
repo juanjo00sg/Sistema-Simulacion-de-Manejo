@@ -17,7 +17,7 @@ namespace backEnd_proyectoFinal.Controllers
         [HttpGet]
         public string Get()
         {
-            User u = new User(0);
+            User u = new User("");
             string m = u.listar();
             return m;
         }
@@ -27,14 +27,14 @@ namespace backEnd_proyectoFinal.Controllers
         public string Get(string id)
         {
 
-            Usuario u = new Usuario();
+            User u = new User("");
             string m = u.listar(id);
             return m;
         }
 
         // POST api/<ValuesController>
         [HttpPost]
-        public bool Post([FromBody] JsonElement value)
+        public string Post([FromBody] JsonElement value)
         {
             string ced = value.GetProperty("ced").ToString();
             string nombre = value.GetProperty("nom").ToString();  
@@ -42,19 +42,19 @@ namespace backEnd_proyectoFinal.Controllers
             string password = value.GetProperty("pass").ToString();            
             int tiempo = value.GetProperty("tiempo").GetInt32();
             int edad = value.GetProperty("edad").GetInt32();
-
-            if (ced == null && nombre == null && tiempo  == null)
+            string m = "";
+            if (ced == null && nombre == null && tiempo  == -1)
             {
                 User u = new User(email, password); //login()
-                string m = u.login();
+                m = u.login();
             } else if (email == null && password == null )
             {
                 User u = new User(ced, nombre, tiempo); //ingresar()
-                string m = u.ingresarTiempo();
-            } else if (tiempo == null )
+                m = u.ingresarTiempo();
+            } else if (tiempo == -1 )
             {
                 User u = new User(ced, nombre, password, edad, email); //registrar()
-                string m = u.registrar();
+                m = u.registrar();
             }
             
             return m;
@@ -76,7 +76,7 @@ namespace backEnd_proyectoFinal.Controllers
         [HttpDelete("{id}")]
         public string Delete(string id)
         {
-            Usuario u = new Usuario(id);
+            User u = new User(id);
             string m = u.eliminar();
             return m;
         }

@@ -73,6 +73,9 @@ function ingresar() {
       ced: cedula,
       nom: nombre,
       edad: parseInt(edad),
+      email: null,
+      pass: null,
+      tiempo: -1,
     }),
   });
 
@@ -125,7 +128,7 @@ function modificar() {
     body: JSON.stringify({
       ced:cedula,
       nom: nombre,
-      edad: parseInt(edad),
+      edad: parseInt(edad),      
     }),
   });
 
