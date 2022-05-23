@@ -36,23 +36,32 @@ namespace backEnd_proyectoFinal.Controllers
         [HttpPost]
         public string Post([FromBody] JsonElement value)
         {
-            string ced = value.GetProperty("ced").ToString();
-            string nombre = value.GetProperty("nom").ToString();  
-            string email = value.GetProperty("email").ToString();
-            string password = value.GetProperty("pass").ToString();            
-            int tiempo = value.GetProperty("tiempo").GetInt32();
-            int edad = value.GetProperty("edad").GetInt32();
+            string option = value.GetProperty("option").ToString();                      
             string m = "";
-            if (ced == null && nombre == null && tiempo  == -1)
+
+            if (option.Equals("login"))
             {
+                string email = value.GetProperty("email").ToString();
+                string password = value.GetProperty("pass").ToString();
+
                 User u = new User(email, password); //login()
                 m = u.login();
-            } else if (email == null && password == null )
+            } else if (option.Equals("ingresar"))
             {
+                string ced = value.GetProperty("ced").ToString();
+                string nombre = value.GetProperty("nom").ToString();
+                int tiempo = value.GetProperty("tiempo").GetInt32();
+
                 User u = new User(ced, nombre, tiempo); //ingresar()
                 m = u.ingresarTiempo();
-            } else if (tiempo == -1 )
+            } else if (option.Equals("registrar"))
             {
+                string ced = value.GetProperty("ced").ToString();
+                string nombre = value.GetProperty("nom").ToString();
+                string email = value.GetProperty("email").ToString();
+                string password = value.GetProperty("pass").ToString();
+                int edad = value.GetProperty("edad").GetInt32();
+
                 User u = new User(ced, nombre, password, edad, email); //registrar()
                 m = u.registrar();
             }

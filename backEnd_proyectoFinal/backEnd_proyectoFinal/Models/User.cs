@@ -58,10 +58,9 @@ namespace backEnd_proyectoFinal.Models
         {
             try
             {
-                string sql = "insert into simulacion (cedula, nombre, email, password, edad) values ('" + this.ced + "','" + 
-                                this.nombre + "'," + this.email + "'," + this.password + "'," + this.edad + ");";
+                string sql = "INSERT INTO simulacion (cedula, nombre, email, password, edad) VALUES ('" + this.ced + "','" + this.nombre + "','" + this.email + "','" + this.password + "'," + this.edad + ");";
                 new NpgsqlCommand(sql, this.bd).ExecuteNonQuery();
-                return "Datos registrados...";
+                return "Registro exitoso...";
             }
             catch (Exception E)
             {
@@ -73,8 +72,7 @@ namespace backEnd_proyectoFinal.Models
         {
             try
             {
-                string sql = "select email, password from simulacion where email = '" + this.email +
-                             "', password = '" + this.password + "';";
+                string sql = "SELECT email, password FROM simulacion WHERE email = '" + this.email + "' AND password = '" + this.password + "';";
                 new NpgsqlCommand(sql, this.bd).ExecuteNonQuery();
                 return "Logeado Correctamente";
             }
@@ -88,8 +86,7 @@ namespace backEnd_proyectoFinal.Models
         {
             try
             {
-                string sql = "update simulacion set nombre ='"  + this.nombre + "', tiempo_simulacion = '"  +
-                            this.tiempo + "' where cedula ='"  + this.ced + "';";
+                string sql = "UPDATE simulacion SET nombre ='"  + this.nombre + "', tiempo_simulacion = '"  +this.tiempo + "' where cedula ='"  + this.ced + "';";
                 new NpgsqlCommand(sql, this.bd).ExecuteNonQuery();
                 return "Tiempo ingresado...";
             }
@@ -104,7 +101,7 @@ namespace backEnd_proyectoFinal.Models
             try
             {
               
-                string sql = "select * from simulacion order by tiempo_simulacion DESC";
+                string sql = "SELECT cedula, nombre, tiempo_simulacion FROM simulacion ORDER BY tiempo_simulacion DESC";
                 
 
                 var reader = new NpgsqlCommand(sql, this.bd).ExecuteReader();

@@ -143,12 +143,10 @@ function ingresar(cedula,nombre,tiempo) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      option: "ingresar",
       ced: cedula,
       nom: nombre,
-      tiempo: tiempo,
-      email: null,
-      pass: null,
-      edad: -1,
+      tiempo: tiempo,      
     }),
   });
 
